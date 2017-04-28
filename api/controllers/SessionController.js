@@ -168,6 +168,11 @@ module.exports = {
         res.redirect('/session/new');
       }
     });
+  },
+
+  timestamp : function (req, res, next) {
+    var time = 27
+
   }
 };
 

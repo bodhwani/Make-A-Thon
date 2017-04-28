@@ -22,7 +22,7 @@
 module.exports.connections = {
 
   /***************************************************************************
-  *                                                                          *
+  *                                             bb                                                *
   * Local disk storage for DEVELOPMENT ONLY                                  *
                                                                             *
   * Installed by default.                                                    *
