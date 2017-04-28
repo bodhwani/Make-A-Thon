@@ -75,7 +75,7 @@ module.exports = {
             console.log(user.contact + 1);
             console.log(req.param('contact'));
 
-            if(user.contact === parseInt(req.param('contact'))){
+            if ((user.contact === parseInt(req.param('contact'))) || (user.contact === (req.param('contact')))) {
               req.session.authenticated = true;
               req.session.User = user;
 

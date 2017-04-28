@@ -85,10 +85,18 @@ module.exports = {
 
           // If the contact from the form doesn't match the contact from the database...
 
+
+
           if (user) {
 
+            console.log(user.contact);
+            console.log(user.email);
+            console.log(req.param('contact') + 1);
+            console.log(req.param('email'));
 
-            if (user.contact === parseInt(req.param('contact'))) {
+            if ((user.contact === parseInt(req.param('contact'))) || (user.contact === (req.param('contact')))) {
+
+
 
               req.session.authenticated = true;
               req.session.User = user;
