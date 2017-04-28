@@ -27,7 +27,7 @@ module.exports = {
       };
       return res.status(200).json({
         success : false,
-        err : "You must enter both a username/email and contact number"
+        message : "You must enter both a username/email and contact number"
       });    }
 
     User.findOne({
@@ -43,7 +43,7 @@ module.exports = {
         };
         return res.status(200).json({
           success : false,
-          err : "Error in logging.Please fill details properly!"
+          message : "Error in logging.Please fill details properly!"
         });
       }
 
@@ -59,7 +59,7 @@ module.exports = {
         // };
         return res.status(200).json({
           success : false,
-          err : "The email address not found"
+          message : "The email address not found"
         });
       }
       else{
@@ -116,7 +116,7 @@ module.exports = {
 
         return res.status(200).json({
           success : false,
-          err : "The email address not found"
+          message : "The email address not found"
         });
       }
       else{

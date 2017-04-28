@@ -37,12 +37,10 @@ module.exports = {
   userRegister: function (req, res, next) {
 
     if (!req.param('email') || !req.param('contact')) {
-      req.session.flash = {
-        err: 'You must enter both a username/email and contact number.'
-      };
+
       return res.status(200).json({
         success : false,
-        err : "You must enter both a username/email and password"
+        message : "You must enter both a username/email and contact number"
       });    }
 
     User.findOne({
@@ -54,11 +52,11 @@ module.exports = {
 
       if (err){
         req.session.flash = {
-          err: 'Error in logging'
+          message: 'Error in logging'
         };
         return res.status(200).json({
           success : false,
-          err : "Error in logging.Please fill details properly!"
+          message : "Error in logging.Please fill details properly!"
         });
       }
 
@@ -74,7 +72,7 @@ module.exports = {
         // };
         return res.status(200).json({
           success : false,
-          err : "The email address not found"
+          message : "The email address not found"
         });
       }
       else{
@@ -85,7 +83,7 @@ module.exports = {
 
           if (err) return next(err);
 
-          // If the password from the form doesn't match the password from the database...
+          // If the contact from the form doesn't match the contact from the database...
 
           if (user) {
 
